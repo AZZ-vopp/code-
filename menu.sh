@@ -17,9 +17,8 @@ purple(){
 
 # cài đặt aapanel quốc tế
 function aapanelgoc(){
-wget -O "/root/aapanel-install.sh" "http://www.aapanel.com/script/install_6.0_en.sh"
-red "Installing the original aapanel panel from the official website."
-bash "/root/install_6.0_en.sh"
+yum install -y wget && wget -O install.sh http://www.aapanel.com/script/install_6.0_en.sh && bash install.sh aapanel
+red "đang cài đặt...."
 }
 
 # cài đặt bản aapanel bản tàu khựa
