@@ -23,9 +23,8 @@ red "đang cài đặt...."
 
 # cài đặt bản aapanel bản tàu khựa
 function aapanelTQ(){  
-wget -O "/root/bt-install.sh" "http://download.bt.cn/install/install_6.0.sh"
-red "The original BTPanel is being installed from the official website.."
-bash "/root/bt-install.sh"
+yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_6.0.sh && sh install.sh
+red "đang cài bản tàu khựa"
 }
 
 # bẻ khoá aapanel bản hiện tại
@@ -43,9 +42,8 @@ iptables -F && clear && echo "   đã mở khoá cho test speed khi dùng vpn !"
 
 # gỡ cài đặt aapanel
 function uninstall(){
-wget -O "/root/bt-uninstall.sh" "http://download.bt.cn/install/bt-uninstall.sh"
-bash "/root/bt-uninstall.sh"
-red "Panel uninstalled successfully."
+service bt stop && chkconfig --del bt && rm -f /etc/init.d/bt && rm -rf /www/server/panel
+red "gỡ cài đặt hoàn tất"
 }
 
 # anti l4
@@ -59,11 +57,11 @@ bash <(curl -Ls https://raw.githubusercontent.com/AZZ-vopp/code-/main/blockspeed
 }
 
 function hacap(){
-wget -O "/root/panelhacap.zip" "https://github.com/AZZ-vopp/code-/raw/010ab53b74a38233c7ffb23b2e20c05d48ef7614/panelhacap.zip"
+wget https://github.com/AZZ-vopp/code-/raw/010ab53b74a38233c7ffb23b2e20c05d48ef7614/panelhacap.zip
 red "tải xuống bản hạ cấp hoàn tất vui lòng chờ 1 tý để đè vào bản đang chạy ....."
 unzip panelhacap.zip
 cd /root/panel
-wget -O "/root/panel/confhacap.sh" "https://raw.githubusercontent.com/AZZ-vopp/code-/main/confhacap.sh" 
+wget https://raw.githubusercontent.com/AZZ-vopp/code-/main/confhacap.sh
 bash "/root/panel/confhacap.sh"
 red "hạ cấp hoàn tất mời quý zị cùng."
 rm /root/aa.zip /root/panel/ -rf
