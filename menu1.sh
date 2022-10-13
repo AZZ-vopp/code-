@@ -57,17 +57,19 @@ bash <(curl -Ls https://raw.githubusercontent.com/AZZ-vopp/code-/main/blockspeed
 }
 
 function hacap(){
-wget https://github.com/AZZ-vopp/code-/raw/010ab53b74a38233c7ffb23b2e20c05d48ef7614/panelhacap.zip
-red "tải xuống bản hạ cấp hoàn tất vui lòng chờ 1 tý để đè vào bản đang chạy ....."
+wget -O "/root/panelhacap" "https://github.com/AZZ-vopp/code-/raw/010ab53b74a38233c7ffb23b2e20c05d48ef7614/panelhacap.zip"
+blue "đang tải."
 unzip panelhacap.zip
 cd /root/panel
-wget https://raw.githubusercontent.com/AZZ-vopp/code-/main/confhacap.sh
-bash "/root/panel/confhacap.sh"
-red "hạ cấp hoàn tất mời quý zị cùng."
-rm /root/aa.zip /root/panel/ -rf
+bash /root/panel/update.sh
+red "Downgrade succeeded."
+rm /root/panelhacap.zip /root/panel/ -rf
+sed -i "s|bind_user == 'True'|bind_user == 'Close'|" /www/server/panel/BTPanel/static/js/index.js
+rm -f /www/server/panel/data/bind.pl
+red "xoá index.js thành công."
 }
 
-
+# menu
 function start_menu(){
     clear
     purple " chào mừng bạn đến với tool aapanel."
