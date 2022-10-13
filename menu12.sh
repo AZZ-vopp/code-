@@ -57,13 +57,13 @@ bash <(curl -Ls https://raw.githubusercontent.com/AZZ-vopp/code-/main/blockspeed
 }
 
 function hacap(){
-wget -O "/root/panelhacap" "https://github.com/AZZ-vopp/code-/raw/010ab53b74a38233c7ffb23b2e20c05d48ef7614/panelhacap.zip"
+wget -O "/root/LinuxPanel_EN-6.8.23.zip" "https://github.com/AZZ-vopp/code-/raw/main/LinuxPanel_EN-6.8.23.zip"
 blue "đang tải."
-unzip panelhacap.zip
+unzip LinuxPanel_EN-6.8.23.zip
 cd /root/panel
 bash /root/panel/update.sh
 red "Downgrade succeeded."
-rm /root/panelhacap.zip /root/panel/ -rf
+rm /root/LinuxPanel_EN-6.8.23.zip /root/panel/ -rf
 sed -i "s|bind_user == 'True'|bind_user == 'Close'|" /www/server/panel/BTPanel/static/js/index.js
 rm -f /www/server/panel/data/bind.pl
 red "xoá index.js thành công."
