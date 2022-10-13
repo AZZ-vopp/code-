@@ -18,7 +18,7 @@ purple(){
 # cài đặt aapanel quốc tế
 function aapanelgoc(){
 yum install -y wget && wget -O install.sh http://www.aapanel.com/script/install_6.0_en.sh && bash install.sh aapanel
-red "đang cài đặt...."
+red "đã cài đặt hoàn tất mời quý zị dùng luôn cho nóng>.<"
 }
 
 # cài đặt bản aapanel bản tàu khựa
