@@ -79,7 +79,7 @@ function start_menu(){
     green " 1. cài đặt aapanel bản gốc( cho centos)"
     green " 2. block speedtest trên vps chạy VPN"
     yellow " ————————————————————————————————————————————————"
-    green " 3. hạ cấp xuống bản ổn định 6.8.23"
+    green " 3. hạ cấp xuống bản ổn định 6.8.23( 1 số chỗ tiếng gốc)"
     green " 4. mở khoá chặn speedtest ch vps vpn"
     green " 5. Crack bản aapanel hiện tại ( yêu tiên cài mới) "
     green " 6. anti lờ bốn"
