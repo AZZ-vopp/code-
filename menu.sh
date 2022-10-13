@@ -19,7 +19,7 @@ purple(){
 function aapanelgoc(){
 wget -O "/root/aapanel-install.sh" "http://www.aapanel.com/script/install_6.0_en.sh"
 red "Installing the original aapanel panel from the official website."
-bash "/root/aapanel-install.sh"
+bash "/root/install_6.0_en.sh"
 }
 
 # cài đặt bản aapanel bản tàu khựa
