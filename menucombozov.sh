@@ -37,6 +37,7 @@ function unspeedtest(){
 iptables -F && clear && echo "   đã mở khoá cho test speed khi dùng vpn !"
 cd /etc/iptables
 rm rules.v4 rules.v6
+reboot
 }
 
 
