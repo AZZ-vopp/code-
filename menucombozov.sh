@@ -35,7 +35,8 @@ red "đã crack xong vui lòng f5 hoặc login lại aapanel"
 # mở chặn speedtest
 function unspeedtest(){
 iptables -F && clear && echo "   đã mở khoá cho test speed khi dùng vpn !"
-
+cd /etc/iptables
+rm rules.v4 rules.v6
 }
 
 
