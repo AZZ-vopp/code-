@@ -29,7 +29,9 @@ red "đang cài bản tàu khựa"
 
 # bẻ khoá aapanel bản hiện tại
 function panelcrack(){  
-bash <(curl -Ls https://raw.githubusercontent.com/AZZ-vopp/Z_OV/main/script/Z_OVpanel.sh)
+sed -i 's|"endtime": -1|"endtime": 999999999999|g' /www/server/panel/data/plugin.json
+sed -i 's|"pro": -1|"pro": 0|g' /www/server/panel/data/plugin.json
+chattr +i /www/server/panel/data/plugin.json
 red "đã crack xong vui lòng f5 hoặc login lại aapanel"
 }
 # mở chặn speedtest
