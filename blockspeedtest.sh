@@ -1,25 +1,7 @@
-rm -rf runblockspeedtest.x
-clear
 echo "Đang chặn speedtest..."
 echo -e ""
 sleep 1
-iptables -I INPUT -s www.fast.com -j DROP
-iptables -I INPUT -s fast.com -j DROP
-iptables -I INPUT -s 23.198.103.141 -j DROP
-iptables -I INPUT -s 23.41.68.21 -j DROP
-iptables -I INPUT -s 104.74.109.137 -j DROP
-iptables -I INPUT -s 23.199.140.37 -j DROP
-iptables -I INPUT -s speedtest.net -j DROP
-iptables -I INPUT -s www.speedtest.net -j DROP
-iptables -I INPUT -s 151.101.66.219 -j DROP
-iptables -I INPUT -s 151.101.194.219 -j DROP
-iptables -I INPUT -s 151.101.2.219 -j DROP
-iptables -I INPUT -s 151.101.130.219 -j DROP
-iptables -I INPUT -s speedtest.vn -j DROP
-iptables -I INPUT -s 203.119.73.32 -j DROP
-iptables -I INPUT -p tcp -m tcp --dport 22 -j ACCEPT
-iptables -I INPUT -p tcp -m tcp --dport 80 -j ACCEPT
-iptables -I INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+iptables -F
 iptables -I INPUT -s 23.246.0.0/18 -j DROP
 iptables -I INPUT -s 198.38.96.0/19 -j DROP
 iptables -I INPUT -s 203.119.73.32 -j DROP
@@ -66,9 +48,15 @@ iptables -I INPUT -s 113.61.111.212 -j DROP
 iptables -I INPUT -s 115.84.182.155 -j DROP
 iptables -I INPUT -s 115.84.178.186 -j DROP
 iptables -I INPUT -s 171.229.196.6 -j DROP
+iptables -I INPUT -s 151.101.194.219 -j DROP
+iptables -I INPUT -s 151.101.2.219 -j DROP
+iptables -I INPUT -s 151.101.66.219 -j DROP
+iptables -I INPUT -s 151.101.130.219 -j DROP
 iptables -I INPUT -s 104.16.210.12 -j DROP
 iptables -I INPUT -s 104.16.209.12 -j DROP
-iptables-save  > /etc/iptables/rules.v4
+# iptables -A INPUT -p icmp -j DROP
+# iptables -A OUTPUT -p icmp -j DROP
+iptables-save  > /etc/iptables/rules1.v4
 systemctl start netfilter-persistent
 systemctl restart netfilter-persistent
 systemctl enable netfilter-persistent
